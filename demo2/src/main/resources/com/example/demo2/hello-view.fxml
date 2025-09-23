@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: #f0f8ff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.MainController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+
+   <Text fill="#2e8b57" strokeType="OUTSIDE" strokeWidth="0.0" text="Расчет треугольника по координатам вершин">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
+
+   <GridPane hgap="10.0" vgap="15.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+
+      <!-- Заголовки -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Вершина" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Координата X" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Координата Y" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+      <!-- Вершина 1 -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Вершина 1 (A)" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="X1:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="txtX1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Y1:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <TextField fx:id="txtY1" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+
+      <!-- Слайдеры для вершины 1 -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Слайдер X1:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Slider fx:id="sliderX1" onMouseDragged="#handleSliderX1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Слайдер Y1:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Slider fx:id="sliderY1" onMouseDragged="#handleSliderY1" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+
+      <!-- Вершина 2 -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Вершина 2 (B)" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="X2:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="txtX2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Y2:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <TextField fx:id="txtY2" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+
+      <!-- Слайдеры для вершины 2 -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Слайдер X2:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Slider fx:id="sliderX2" onMouseDragged="#handleSliderX2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Слайдер Y2:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Slider fx:id="sliderY2" onMouseDragged="#handleSliderY2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+
+      <!-- Вершина 3 -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Вершина 3 (C)" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="X3:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="txtX3" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Y3:" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <TextField fx:id="txtY3" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+
+      <!-- Слайдеры для вершины 3 -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Слайдер X3:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Slider fx:id="sliderX3" onMouseDragged="#handleSliderX3" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Слайдер Y3:" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+      <Slider fx:id="sliderY3" onMouseDragged="#handleSliderY3" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+
+      <!-- Результаты -->
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Периметр (см):" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+      <TextField fx:id="txtPerimeter" editable="false" style="-fx-background-color: #e6e6fa;" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.columnSpan="2" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Площадь (см²):" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+      <TextField fx:id="txtArea" editable="false" style="-fx-background-color: #e6e6fa;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+   </GridPane>
+
+   <!-- Кнопки управления -->
+   <HBox alignment="CENTER" spacing="20.0">
+      <Button fx:id="btnCalculate" mnemonicParsing="false" onAction="#handleCalculate" style="-fx-background-color: #32cd32; -fx-text-fill: white;" text="Рассчитать" />
+      <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleReset" style="-fx-background-color: #ffa500; -fx-text-fill: white;" text="Сброс" />
+      <Button fx:id="btnExit" mnemonicParsing="false" onAction="#handleExit" style="-fx-background-color: #dc143c; -fx-text-fill: white;" text="Выход" />
+   </HBox>
+</VBox>
